@@ -1,0 +1,1 @@
+document.write("Hello World！inline-mode！XG！哈哈")
