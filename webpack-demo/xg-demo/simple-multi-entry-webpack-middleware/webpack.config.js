@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dest'),
     // publicPath作用：HtmlWebpackPlugin插件中通过template生成的html文件中，引入资源的路径相对于该配置地址
-    publicPath: "http://localhost:8080/scripts",
+    publicPath: "http://localhost:8080/dest",
     filename: "[name]/bundle.js"
       // chunkFilename: "js/[id].chunk.js"
   },
@@ -25,7 +25,7 @@ module.exports = {
   debug: true,
   // devtool: '#source-map',
   plugins: [
-    new webpack.ProvidePlugin({ //加载jq
+    new webpack.ProvidePlugin({
       $: 'jquery'
     }),
     new ExtractTextPlugin('[name]/bundle.css', { allChunks: true }), //单独使用style标签加载css并设置其路径

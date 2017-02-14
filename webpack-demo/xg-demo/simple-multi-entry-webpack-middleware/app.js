@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 // static files root path only works in prodution env, avoid confict with webpack dev server
 // if (env === 'production') {
-  app.use('/public', express.static(path.join(__dirname, './dest')));
+  app.use('/dest', express.static(path.join(__dirname, './dest')));
 // }
 
 var handlebars = exphbs.create({
