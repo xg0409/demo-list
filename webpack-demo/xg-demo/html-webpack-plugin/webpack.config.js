@@ -37,7 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({ //根据模板插入css/js等生成最终HTML
       title: 'My App',
       favicon: './src/img/favicon.ico', //favicon路径
-      filename: '/view/index.html', //生成的html存放路径，相对于 path
+      // filename: '/view/index.html', //生成的html存放路径，相对于 path
       template: './src/view/index.html', //html模板路径
       inject: true, //允许插件修改哪些内容，包括head与body
       hash: true, //为静态资源生成hash值
