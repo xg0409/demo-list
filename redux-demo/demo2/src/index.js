@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import App from './components/App';
+import reducer from './reducers'; 
 
-const root = document.getElementById('root');
+const store = createStore(reducer);
 
-const render = () => ReactDOM.render(
- <h1>脚手架</h1>,
-  root
-)
-render();
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
