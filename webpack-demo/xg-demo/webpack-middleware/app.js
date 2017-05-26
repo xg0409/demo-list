@@ -11,6 +11,7 @@ var path = require('path');
 var exphbs = require('express-handlebars');
 var helpers = require('handlebars-helpers')();
 var configHandle = require('./webpack/config.handle.js');
+var xgConfig = require('./xg.config.js');
 
 var env = app.get('env');
 app.use(morgan('dev'));
@@ -19,10 +20,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(cookieParser());
 
-// static files root path only works in prodution env, avoid confict with webpack dev server
-// if (env === 'production') {
-app.use('/dest', express.static(path.join(__dirname, './dest')));
-// }
+app.use('/public', express.static(path.join(__dirname, './public')));
 
 var handlebars = exphbs.create({
   defaultLayout: 'main',
@@ -50,16 +48,16 @@ var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var webpackConfig = configHandle.getWebpackDevConfig();
-// var webpackConfig = require('./webpack/webpack.dev.config.js');
+var port = process.env.PORT;
 var compiler = webpack(webpackConfig);
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: 'http://localhost:8080/dest/',
+  publicPath: 'http://localhost:'+port+'/public/' + xgConfig.publicProjectName,
   stats: { colors: true }
 }));
 app.use(webpackHotMiddleware(compiler));
 
 
-var server = app.listen("8080", function() {
+var server = app.listen(port, function() {
   console.log('Listening on port %d ...', server.address().port);
 });
 

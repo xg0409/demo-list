@@ -3,7 +3,7 @@ var router = express.Router();
 
 function render(req, res, moduleName) {
   res.render('index', {
-    projectName: 'creditcard',
+    projectName: 'biz_activities/creditcard',
     moduleName: moduleName,
     title: 'login home2222'
   });

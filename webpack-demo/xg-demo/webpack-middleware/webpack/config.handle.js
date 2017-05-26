@@ -19,7 +19,7 @@ function entrysLog(webpackEntry) {
 }
 
 module.exports = {
-  getModules: function() {
+  getModules: function () {
     var modules = process.env.ENTRY_MODULES ? JSON.parse(process.env.ENTRY_MODULES) || [] : [];
     var webpackEntry = {};
     if (modules.length == 0) {
@@ -34,14 +34,14 @@ module.exports = {
         webpackEntry[webpackEntryKey] = './' + webpackEntryValue;
       }
     }
-    entrysLog(webpackEntry);
     return webpackEntry;
   },
-  getStartEntrys: function() {
+  getStartEntrys: function () {
     var webpackEntry = this.getModules();
+    entrysLog(webpackEntry);
     return webpackEntry
   },
-  getWebpackEntrys: function() {
+  getWebpackEntrys: function () {
     var webpackEntrys = {};
     var modules = this.getModules();
     var env = process.env.NODE_ENV;
@@ -61,15 +61,15 @@ module.exports = {
     }
     return webpackEntrys;
   },
-  getWebpackDevConfig: function() {
-    this.getWebpackProdConfig();
+  getWebpackDevConfig: function () {
     var webpackDevConfig = require('./webpack.dev.config.js');
     webpackDevConfig['entry'] = this.getWebpackEntrys();
     return webpackDevConfig;
   },
-  getWebpackProdConfig: function() {
+  getWebpackProdConfig: function () {
     var webpackProdConfig = require('./webpack.prod.config.js');
     var webpackEntrys = this.getWebpackEntrys();
+    entrysLog(webpackEntrys);
     webpackProdConfig['entry'] = webpackEntrys;
     var plugins = webpackProdConfig.plugins || [];
 
@@ -93,6 +93,10 @@ module.exports = {
 
         var key = webpackEntrysKeyArr[i];
         var value = webpackEntrys[key];
+        console.log(key);
+        if (key == 'creditcard/bank_cbc') {
+          htmlWebpackPluginTpl['template'] = './bin/index.template2.html';
+        }
         if (key) {
           htmlWebpackPluginTpl['filename'] = "./" + key + "/index.html"
           var chunks = htmlWebpackPluginTpl['chunks'] || [];
@@ -103,5 +107,9 @@ module.exports = {
 
     }
     return webpackProdConfig;
+  },
+  getZipPath: function () {
+    var webpackEntry = this.getModules();
+    console.log('zip zip', webpackEntry);
   }
 }

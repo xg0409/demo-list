@@ -10,16 +10,11 @@ module.exports = {
   //   'activities/baitiao/get_coupon': ['webpack-hot-middleware/client?reload=true', "./client/activities/baitiao/get_coupon"],
   //   'activities/baitiao/pull_new': ['webpack-hot-middleware/client?reload=true', "./client/activities/baitiao/pull_new"]
   // },
-  entry: {
-    'creditcard/bank_cbc': "./client/creditcard/bank_cbc",
-    'creditcard/bank_icbc': "./client/creditcard/bank_icbc",
-    'activities/baitiao/get_coupon': "./client/activities/baitiao/get_coupon",
-    'activities/baitiao/pull_new': "./client/activities/baitiao/pull_new"
-  },
+  entry: {},
   output: {
-    path: path.join(__dirname, 'dest'),
+    path: path.join(__dirname, 'public'),
     // publicPath作用：HtmlWebpackPlugin插件中通过template生成的html文件中，引入资源的路径相对于该配置地址
-    publicPath: "http://localhost:8080/dest",
+    // publicPath: "http://localhost:8080/public",
     filename: "[name]/bundle.js"
       // chunkFilename: "js/[id].chunk.js"
   },

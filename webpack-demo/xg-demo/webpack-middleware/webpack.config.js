@@ -9,7 +9,7 @@ module.exports = {
     'activities/baitiao/get_coupon': "./client/activities/baitiao/get_coupon"
   },
   output: {
-    path: path.join(__dirname, 'dest'),
+    path: path.join(__dirname, 'dest/biz_activities'),
     // publicPath作用：HtmlWebpackPlugin插件中通过template生成的html文件中，引入资源的路径相对于该配置地址
     publicPath: "http://localhost:8080/dest",
     filename: "[name]/bundle.js"
