@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+}
+
+.cpt-bank-list {}
+
+.cpt-bank-item {
+  position: relative;
+  height: 100px;
+  border-bottom: 1px solid #ccc;
+  overflow: auto;
+}
+
+.bank-icon {
+  width: 60px;
+  height: 60px;
+  background: url('https://css.40017.cn/jinrong/files/i/baitiao/_common/bank/icbc.png') 0 0 no-repeat;
+  background-size: 60px 60px;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  left: 20px;
+}
+
+.bank-info {
+  margin-top: 50px;
+  transform: translateY(-50%);
+  padding-left: 100px
+}
+
+.bank-name {
+  margin-bottom: 5px;
+}
+
+.bank-desc {
+  font-size: 12px;
+}
+
+.bank-desc span:nth-child(1) {
+  border: 1px solid #ccc;
+  padding: 1px 2px;
+  line-height: 110%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.select-icon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 20px;
+}
+.select-no {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtBAMAAADINP+pAAAALVBMVEUAAADc3Nzf39/+/v7u7u75+fnk5OTh4eHq6ur19fXn5+f09PT7+/vw8PD39/cyVXitAAAAAXRSTlMAQObYZgAAAXBJREFUOMuFk7tKA0EUhn+vMYkK/7rZ4JoIQxC1Wy+tYBCsRCLYCAoGFCyNNmIhiYIWgkTxAQwWtkaxj4W9YGWXys53MNlJNjs7WfyK4fDt7Jk5M2fQZufyaPpg3YHKwDldZsqKHs2zRfLZp4dL5Mn39sfvFWnlOv6OvJHRpmDa0yPkfjteJC/acZaz8Pih7bSmKzlRYlEGt3yAj36acjPCgkKJdTSIcUr1gzyWacqB2oWbKG8iQNVwgChTQR/hJzDE5aCPcxeYZw5BRKKxrAWNUhrImrqv2kBlQvcbSaCQ0P0cHYiU7ntZA8d0H2EuzIfl6bpuDx1UxnX/boTVFXIOZrOGmubFJBDTzznKw+aQ0bbvTi2ku91jY2Rdv3fZFsE+ycjPtuqzLMt0LGp9KAPbUaY/eg155u9zy/H+5Ir3RoQ7XfJCY01GS4Km09lxhdx7W+jbWiUtfzVx750aX+pRVaS2X6HSd/8kjNPrGv7hDwVkQk7HDqO2AAAAAElFTkSuQmCC);
+  background-size: 100%;
+}
+
+.select-yes {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAMAAAANxBKoAAAAgVBMVEUAAAAuvVn5/fo0wF79/v2x58FOx3O76slExGvt+fFz05Dn+Oy26MWR3ahq0In2/Phnz4es5b37/vzd9OSJ2qF41JRfzYCi4rWe4LKC2Jw7wWPi9unG7dLB686Z365u0Yzz/PbP8NnK7tWm47lmz4Vay3w/w2bZ8+F91pjS8dtUyXcr5DZPAAAAAXRSTlMAQObYZgAAAcxJREFUSMeN1Ol2qjAUBeCzCYQAKioziEOvU/v+D3ghpY0kaXD/cLHk43AyQXq8yy4vTps4rw5ncicNNgy/YWUV/W2jdQst7NnZ7b76tvxZr/o+rJobxqysOLlJWiXqr3NQstCKP9rRhr7enBWHDGC1R2/lMGDxSe8lGzBPXCJU/ad8wJELr6CGmwMsc+NBfJDMgwHBEsY1JZnTcLmItxPOADwcOJDYU13Hb2P/DhwW8OYH0ycg/Hcx1UCh7vqeE1MM7BQuXm/RTsf0BVwUljdn+DR7mwCS322ratnwOiIGnK19/sOQ+BWjIwCeMbt2jIxaICKTT1hvmY+PGLyWeE8qPgNS2gKhuYkMTB0g5DZZk43H8xUOgXL61bmJqZFVI8gJ1+sUGt4LYDw9V+BIOn9qmPpp860A4dFSyml4ngDqJXwAWDItsbxyxeNAMw3gCyh9p26A9mfFL5BNuY+bOgRHaPNiflJjmh0g5GYzap/fzq+j2ALYRtYBNjC+kt5Y/b4zy/d8rKzX8dcYwoN0ttx9iSFFalkAjiGsCLK9fLwLmzuG3AP7EhxbyDDBuWDTdR7RH0lrjlnEOiJXHtVJTPJ6vPi0HC/psiQlS/4DlEUVPh1d7jMAAAAASUVORK5CYII=);
+  background-size: 100%;
+}
